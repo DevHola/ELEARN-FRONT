@@ -1,0 +1,31 @@
+.enrolled{
+    top:150px;
+    flex: 0.6;
+    justify-content: center;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.enrolled > h3 {
+    color:grey;
+    text-align: center;
+    font-size:18px ;
+    font-weight: bold;
+}
+.search__enroll{
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    height: 22px;
+    color:grey; 
+    background-color:#eef3f8;
+    border-bottom: 0.1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.Current{
+    padding: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
