@@ -1,0 +1,76 @@
+.container{
+    margin:auto;
+    padding:0;
+    width:60%
+}
+.logo{
+    padding-top:40px;
+    text-align:center;
+}
+.logo>img {
+    object-fit: cover;
+    height:130px;
+}
+form >input{
+    padding:10px;
+}
+.catch{
+    font-weight:600;
+    color:#7B7878;
+    text-align:center;
+    font-stretch: expanded;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.signup{
+    padding:10px;
+    text-align:center;
+}
+.in{
+    width: 400px;
+    border-radius:10px;
+    border:1px solid #707070;
+    padding:15px;
+    margin-bottom:15px;
+    box-shadow:0 3 6;
+}
+.sb{
+    width:400px;
+    border-radius:10px;
+    border:0px;
+    padding:10px;
+    background:#1473E6;
+    font-weight:700;
+    color:white;
+    font-size: 30px;
+    
+}
+input[type=text]:hover{
+box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+}
+input[type=text]:focus {
+box-shadow: 0 0 5pt 2pt #D3D3D3;
+outline-width: 0px;
+}
+input[type=password]:hover{
+box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+}
+input[type=password]:focus {
+box-shadow: 0 0 5pt 2pt #D3D3D3;
+outline-width: 0px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: grey;
+font-stretch: expanded;
+padding: 5px;
+font-size:15px;
+opacity: 1; /* Firefox */
+}
+.check{
+    width: 100%;
+}
+.term{
+    font-weight:500;
+    padding-left: 3px;
+    margin-left:3px;
+    color:#707070;
+}

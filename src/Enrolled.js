@@ -12,13 +12,14 @@ function Enrolled() {
             <div className="Current">
                 <Current/>
                 </div>
+                {/*
                 <div className="search__enroll">
                 <span>Recommended Courses</span>
                 </div>
                 <div className="Current">
                 <Recommended/>
-                </div>
-                
+                </div>*/
+}
                 
         
            

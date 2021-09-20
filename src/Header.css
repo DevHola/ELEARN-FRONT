@@ -35,6 +35,14 @@
     background: none;
     align-items: center;
 }
+.header__search > input:hover{
+    outline: none;
+    border: none;
+    background: none;
+    align-items: center;
+    width: 200px;
+}
+
 .header__right{
     display:flex;
     align-items: center;

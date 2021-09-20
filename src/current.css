@@ -1,14 +1,16 @@
 .current__course{
     display:flex;
-    align-items: center;
+    align-items: left;
     flex-wrap: wrap;
-    height:fit-content;
+    margin:0;
+    padding:0;
+    height:50px;
     margin-right: 55px;
 }
 .individual{
-    justify-content: space-between;
+    justify-content:left;
     width: calc(20% - 10px);
-    padding: 5px;
+    padding: 0px;
     margin-right: 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -23,6 +25,8 @@
 }
 .title{
     text-align: left;
+    margin-top:15px;
+    height: fit-content;
 }
 .individual > img{
     margin-bottom: -20px;
