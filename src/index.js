@@ -7,6 +7,7 @@ import Login from './screens/Login';
 import Activate from './screens/Activate';
 import ForgetPassword from './screens/ForgetPassword';
 import ResetPassword from './screens/ResetPassword';
+import Dashboard from './screens/Dashboard';
 import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,6 +21,7 @@ ReactDOM.render(
      <Route path="/user/activate/:token" exact render={props=><Activate {...props}/>}/>
      <Route path="/user/forgetPassword" exact render={props=><ForgetPassword {...props}/>}/>
      <Route path="/user/ResetPassword/:token" exact render={props=><ResetPassword {...props}/>}/>
+     <Route path="/:token" exact render={props=><Dashboard {...props}/>}/>
    </Switch>
    </BrowserRouter>,
   document.getElementById('root')

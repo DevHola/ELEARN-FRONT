@@ -1,0 +1,110 @@
+.sidebar{
+	flex:0.2;
+	position: sticky;
+	width:fit-content;
+	height:fit-content;
+	margin-right:10px;
+}
+    .bx{
+        background:white;
+    }
+    .crop{
+        border-radius: 50%;object-fit: cover;height: 162px; display: block;margin-left: auto;margin-right: auto;margin-top: -100px;
+    }
+    .tp{
+        background:white;height: 111px;
+    }
+    .num{
+        margin-right: 21px;font-weight: 600;font-size:15px;color:#7B7878;font-family: Modern No.20;
+    }
+    .name{
+        font-family: Sitka Display;padding:7px;text-align: center;font-size: 18px;
+    }
+    .email{
+        font-family: Sitka Display;text-align:center;font-size: 13px;margin-top:-15px;
+    }
+    .correct{
+        margin-top: -15px;
+    }
+    
+	.enroll{
+		padding:10px;
+		display: flex;
+		flex:1;
+		margin-top:-10px;
+		margin-left:25px;
+		justify-content: space-between;
+	}
+	.bg{
+	 height:107px;
+	 width:258px;
+	 border-top-left-radius:27px;
+	 border-top-right-radius:27px;
+	 box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+	}
+	.back{
+	 object-fit:contain;
+     height:126px;
+	 margin-top:-13px;
+	 margin-left: -9px;
+	 }
+	.contain{
+        position: relative;
+		margin-top:59px;
+	    margin-left:78px;
+		width:256px;
+		height:237px;
+    }
+	.contain1{
+		margin-top: 11px;
+	    margin-left:78px;
+		width:256px;
+		height:fit-content;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+    }
+    .roller{
+        color:#7B7878;
+        font-size: 15px;
+        text-align:left;
+        font-weight: 500;
+        font-family:-webkit-pictograph;
+        }
+	.contain2{
+		margin-top: 11px;
+	    margin-left:78px;
+		width:256px;
+		height:fit-content;
+		border-bottom-left-radius:27px;
+	    border-bottom-right-radius:27px;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+    }
+    .achieve{
+		padding:15px;
+		margin-left:15px;
+		display: flex;
+		flex:1;
+		justify-content: space-between;
+	}
+	.Achievement_item{
+	color:#7B7878;
+	font-family:Monotype Corsiva;
+    font-size: 20px;
+    text-align:center;
+    font-weight: 500;
+	}
+    .box{
+        width: 100%;
+        height: 100%;            
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+		box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12);
+		border-top-left-radius:27px;
+		border-top-right-radius:27px;  /* for demo purpose  */
+    }
+    .stack-top{
+        z-index: 9;
+		box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.12);
+		margin-top:-10px;
+    }
