@@ -4,6 +4,9 @@ import axios from 'axios';
 import { authenticate, isAuth } from '../helper/auth';
 import { Link, Redirect } from 'react-router-dom';
 import '../screens/Login.css'
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import { login } from '../redux/actions/authActions'
 import logo from '../assets/logo.PNG'
 const Login=()=> {
     const [formdata,setFormData] = useState({

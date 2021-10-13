@@ -1,8 +1,21 @@
-.footer{
-    padding: 10px;
+.justin{
+ padding: 1px;
 }
-.footer > h1{
-    color:lightgray;
-    font-size: small;
-    text-align: center;
+.flink{
+    color:#1473E6;font-weight: 700;
+}
+.fcomm{
+    color:#1473E6;font-weight: 700;
+}
+.ftweet{
+    color:#1473E6;font-weight: 700;
+}
+.high{
+    width:100%;text-align:center;
+}
+.flogo{
+    height:120px;object-fit: cover;text-align: center;padding: 3px;text-align: center;
+}
+.foot{
+    background-color:whitesmoke;
 }

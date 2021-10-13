@@ -12,7 +12,7 @@ function Sidebar() {
             <div className="box stack-top tp">
                 <div><img src={Photo} className="back" alt="i_photo"></img></div>
                <div><img src={Crop} className="crop" alt="i-main"></img></div>
-            <div  className="correct">
+            <div  className="correct mt-1">
                 <h3 className="name"><b>Ibrahim Fawaz Olamide</b> </h3>
                 <h6 className="email"><b>Connectola@yahoo.com</b></h6>
             </div>

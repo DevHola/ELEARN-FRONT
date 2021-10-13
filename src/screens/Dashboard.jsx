@@ -7,9 +7,9 @@ import Enroll from './Enroll';
 
 function Dashboard() {
     return (
-        <div>
+        <div className="container-fluid">
             <Navigation/>
-            <div class="mainer">
+            <div class="mainer mt-5">
                 <Sidebar></Sidebar>
                 <Enroll></Enroll>
                 </div>
