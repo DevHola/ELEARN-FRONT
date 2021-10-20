@@ -30,7 +30,7 @@ function Sidebar() {
         </div>
         <div className="contain2">
             <div className="achieve">
-                <p class="Achievement_item">Achievements</p>
+                <p className="Achievement_item">Achievements</p>
                 <div><img src={Icon} alt="i_drop"></img></div>
                 
             </div>

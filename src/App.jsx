@@ -1,51 +1,44 @@
-import React, { Component } from 'react'
 import './App.css';
-import Footer from './Footer';
-import Navigation from './screens/Navigation';
-import { Provider } from 'react-redux'
-import store from '../src/redux/Store'
-import { loadUser} from '../src/redux/actions/authActions'
-export default class App extends Component {
-	componentDidMount(){
-		store.dispatch(loadUser());
-	}
-	render() {
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Cookies from 'js-cookie'
+import Register from './screens/Register';
+import React ,{ useEffect } from 'react'
+import Home from './screens/Home';
+import Login from './screens/Login';
+import Activate from './screens/Activate';
+import ForgetPassword from './screens/ForgetPassword';
+import ResetPassword from './screens/ResetPassword';
+import Dashboard from './screens/Dashboard';
+import AuthRoute from './screens/AuthRoute';
+import { useSelector,useDispatch } from 'react-redux'
+import { loadUser} from './redux/actions/authActions'
+export default function App({props}) {
+  const counter = useSelector((state) => state)
+  console.log(counter)
+  const dispatch = useDispatch()
+  const token = Cookies.get('token');
+  useEffect(()=>{
+       dispatch(loadUser())
+  },[dispatch])
+  
 		return (
-			<Provider store={store}>
-    <div className="container-fluid m-0 p-0">
-    <div className="container-fluid">
-  <Navigation/>
-  <div className="spacer">
-    &nbsp;
-</div>
-</div>
-
-      <div class="w-100"><img className="slider" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" height="40px" ></img></div>
-
-      <div className="container-fluid pb-5 ">
-		 <div className="w-100 pile">
-			 <h1 className="pt-5 lead">Explore And Widen Your Horizon</h1>
-			 <div className="d-flex mt-4 w-100">
-				 <div className=" border p-4 m-1 hallow w-25 cat" >Development</div>
-				 <div className=" border p-4 m-1 hallow w-25 cat" >Business & Finance</div>
-				 <div className=" border p-4 m-1 hallow w-25 cat" >Design</div>
-				 <div className=" border p-4 m-1 hallow w-25 cat" >Marketing</div>
-			 </div>
-			 <div className="d-flex mt-2 ">
-				<div className=" border p-4 m-1 hallow w-25 cat" >Data Science</div>
-				<div className=" border p-4 m-1 hallow w-25 cat" >Computer science</div>
-				<div className=" border p-4 m-1 hallow w-25 cat" >Liberal Arts</div>
-				<div className=" border p-4 m-1 hallow w-25 cat" >Personal development</div>
-			</div>
-			</div>
-		</div>
-    <div className="container-fluid spoke ">
-	  <Footer/>
-		</div>
-    
-    </div>
-	</Provider>
-
+           <div className="">
+			   <Router>
+			   <main>
+			   <Switch>
+     <Route path="/" exact render={props=><Home {...props}/>}/>
+     <AuthRoute path="/register" type="guest"  exact render={props=><Register {...props}/>}/>
+     
+     <AuthRoute path="/login" type="guest" exact render={props=><Login {...props}/>}/>
+     <AuthRoute path="/user/activate/:token" type="guest" exact render={props=><Activate {...props}/>}/>
+     <AuthRoute path="/user/forgetPassword" exact type="guest" render={props=><ForgetPassword {...props}/>}/>
+     <AuthRoute path="/user/ResetPassword/:token" type="guest" exact render={props=><ResetPassword {...props}/>}/>
+     <Route path="/user/:id" exact  render={props=><Dashboard {...props}/>}/>
+   </Switch>
+			   </main>
+			   </Router>
+		   </div>			
+ 
 		)
 	}
-}
+

@@ -1,0 +1,47 @@
+.slider{
+    height:400px;object-fit: cover;width: 100%;
+}
+.bracer{
+    margin:0;
+    padding: 0;
+}
+.spacer
+{
+width: 100%;
+height: 55px;
+}
+.pub{
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+}
+.cat{
+    font-weight:600;font-family: 'Poppins', sans-serif;
+}
+.pile{
+    padding:200px;
+    padding-top: 0;
+}
+.spoke {
+    margin:0;
+    padding-left: -10px;
+    padding-right: -10px;
+    background-color: whitesmoke;
+    bottom: -10px;
+}
+.flink{
+    color:#1473E6;font-weight: 700;
+}
+.fcomm{
+    color:#1473E6;font-weight: 700;
+}
+.ftweet{
+    color:#1473E6;font-weight: 700;
+}
+.high{
+    width:100%;text-align:center;
+}
+.flogo{
+    height:100px;object-fit: cover;text-align: center;
+}
+.foot{
+    background-color:whitesmoke;
+}

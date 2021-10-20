@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
-import { authenticate, isAuth } from '../helper/auth';
 import { Link, Redirect } from 'react-router-dom';
 import '../screens/Login.css'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
+import { authenticate, isAuth } from '../helper/auth';
+import { useHistory } from "react-router-dom";
 import { login } from '../redux/actions/authActions'
+import 'react-toastify/dist/ReactToastify.css';
 import logo from '../assets/logo.PNG'
-const Login=()=> {
+export default connect(null, { login })(props => {
+  
     const [formdata,setFormData] = useState({
         email:"",
         password:"",
       })
+      const history = useHistory();
       const {email,password} = formdata
       const handleChange = text => e =>{
            setFormData({...formdata,[text]:e.target.value})
@@ -20,27 +22,32 @@ const Login=()=> {
       const handleSubmit = e =>{
         e.preventDefault()
         if(email && password){
-                  axios.post('http://localhost:7000/Api/login',{
-                    email,password:password
-                  }).then(res=>{
-                      authenticate(res,()=>{
-                        setFormData({...formdata,
-                            email:'',
-                            password:''
-                          })
-                            toast.success("Sign in success")
-                      })
-                  }).catch(err=>{
-                    toast.error(err.response.data.message)
-                  })
-           
+          props.login({ email, password });
+          setFormData({...formdata,
+            email:'',
+            password:''
+          });
+            toast.success("Sign in success")
+            const user = JSON.parse(localStorage.getItem('user'));
+            if(user){
+              console.log(user.name)
+              setTimeout(() => {
+              history.push(`/${user.name}`)
+              }, 5000)
+
+            }else{
+              setTimeout(() => {
+                history.push('/')
+                }, 5000)
+            }
+            
         }else{
           toast.error("Please fill all fields")
         }
       }
     return (
         <div className="Register Container">
-        {isAuth()? <Redirect to='/'/> :null}
+           {isAuth()? <Redirect to='/'/> :null}
         <ToastContainer/>
         <div className="container">
         <div className="logo"><img src={logo} alt="logo" /></div>
@@ -68,6 +75,4 @@ const Login=()=> {
     </div>
       </div>
     )
-}
-
-export default Login
+})

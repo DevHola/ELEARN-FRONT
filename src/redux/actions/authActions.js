@@ -20,7 +20,7 @@ export const loadUser = () => {
       dispatch({ type: USER_LOADING });
       const token =Cookies.get('token')
     return axios
-        .get('http://localhost:7000/Api/user', { headers: {"x-auth-token" : `${token}`} } )
+        .get('https://elearn-ai.herokuapp.com/Api/user', { headers: {"x-auth-token" : `${token}`} } )
         .then(res =>
           dispatch({
             type: USER_LOADED,
@@ -83,7 +83,7 @@ export const login = ({ email, password }) => (
   const body = JSON.stringify({ email, password });
 
   axios
-    .post('/Api/login', body, config)
+    .post('https://elearn-ai.herokuapp.com/Api/login', body, config)
     .then(res =>
       dispatch({
         type: LOGIN_SUCCESS,
