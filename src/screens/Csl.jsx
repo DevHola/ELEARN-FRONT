@@ -3,16 +3,18 @@ import '../screens/Navigation.css'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 export default function Csl(props) {
-    const user = props.user
+    const user = props.user;
+    const isLoading = props.isLoading;
     
     return (
         <div className="d-flex flex-row">
         <div className="col-4">
-        <img src="https://img.icons8.com/clouds/100/000000/user.png" class="img-fluid ikon"/>
+        <img src="https://img.icons8.com/clouds/100/000000/user.png" alt="" class="img-fluid ikon"/>
         </div>
         <div className="col-8">
         <li className="nav-item dropdown">
-         <a href="#" className="nav-link dropdown-toggle twi" data-bs-toggle="dropdown">{user.user.name ||  <Skeleton />}  </a>
+         <a href="#" className="nav-link dropdown-toggle twi" data-bs-toggle="dropdown">
+             {isLoading ? <Skeleton /> : user.user.name  }  </a>
             <div className="dropdown-menu bg-white">
                 <a href="#" className="dropdown-item">Inbox</a>
                 <a href="#" className="dropdown-item">Drafts</a>

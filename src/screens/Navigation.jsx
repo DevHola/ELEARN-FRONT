@@ -10,7 +10,7 @@ import Csl from './Csl';
 function Navigation({prop}) {
 	const Auth = useSelector((state) => state.Authentication.isAuthenticated)
     const user = useSelector((state)=>  state.Authentication.user)
-	//console.log(user)
+	const isLoading = useSelector((state)=> state.Authentication.isLoading)
 	const dispatch = useDispatch()
 	const token = Cookies.get('token');
 	
@@ -62,7 +62,7 @@ function Navigation({prop}) {
 		<div  className="mb-1 liner "></div>
 		
 		<div className="col-6 mr-5">
-		{Auth ? <Csl user={user}></Csl>: <Slb></Slb>}
+		{Auth ? <Csl user={user} isLoading={isLoading}></Csl>: <Slb></Slb>}
 			</div>
 	</div></div>
   </div>
