@@ -12,7 +12,7 @@ export default function Csl(props) {
         </div>
         <div className="col-8">
         <li className="nav-item dropdown">
-         <a href="#" className="nav-link dropdown-toggle twi" data-bs-toggle="dropdown">{user.user.name} || <Skeleton /> </a>
+         <a href="#" className="nav-link dropdown-toggle twi" data-bs-toggle="dropdown">{user.user.name ||  <Skeleton />}  </a>
             <div className="dropdown-menu bg-white">
                 <a href="#" className="dropdown-item">Inbox</a>
                 <a href="#" className="dropdown-item">Drafts</a>
