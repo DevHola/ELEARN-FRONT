@@ -2,7 +2,7 @@
 	border:0.1px solid grey;
 }
 .liner{
-	border: 1px solid lightgrey;height:30px;
+	border: 1px solid lightgrey;height:40px;
 }
 .diner{
 	text-align: right;
@@ -22,6 +22,43 @@
 width: 100%;
 height: 55px;
 }
+.dropdown-menu {
+	background-color: #004059;
+	color: white;
+	border: 0px;
+	border-radius: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  }
+  
+  .dropdown-menu>li>a {
+	background-color: #004059;
+	color: white;
+  }
+  .twi{
+	  color:black;
+	  font-weight: 600;
+	  margin-left:-40px;
+  }
+  .ikon{
+	  height:50px;
+	  margin-bottom:10px;
+  }
+  
+  .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+	background-color: #004059;
+	color:white;
+  }
+  
+  .dropdown-menu .divider {
+	  height: 1px;
+	  margin: 9px 0;
+	  overflow: hidden;
+	  background-color: #003246;
+  }
+  
+  
+  
 .typo>a{
 color:grey;margin-left:-13px;
 }

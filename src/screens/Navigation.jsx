@@ -57,9 +57,9 @@ function Navigation({prop}) {
 			</div>
 		  </div>
 	</div>
-	<div className="col-5"><div className="row mt-2 ml-1">
-		<div className="col nav ml-4"><a href="#">Teach with DigiLearn.</a></div>
-		<div  className="mb-1 liner"></div>
+	<div className="col-5"><div className="row mt-3 ml-1">
+		<div className="col nav ml-4 mt-2"><a href="#">Teach with DigiLearn.</a></div>
+		<div  className="mb-1 liner "></div>
 		
 		<div className="col-6 mr-5">
 		{Auth ? <Csl user={user}></Csl>: <Slb></Slb>}
