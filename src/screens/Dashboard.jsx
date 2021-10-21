@@ -1,18 +1,19 @@
-import React ,{ Component }from 'react'
+import React,{useEffect} from 'react';
 import axios from 'axios';
 import '../screens/Dashboard.css';
 import Navigation from './Navigation';
 import Sidebar from './Sidebar';
 import Enroll from './Enroll';
-import store from '../redux/Store'
+import { useSelector,useDispatch } from 'react-redux'
 import { loadUser} from '../redux/actions/authActions'
 
-export default class Dashboard extends Component {
-    	componentDidMount(){
-		store.dispatch(loadUser());
-	}
-    render(){
-        return (
+function Dashboard() { 
+	const dispatch = useDispatch()
+	useEffect(()=>{
+		dispatch(loadUser())
+	  
+	},[dispatch])
+         return (
             <div className="container-fluid">
                 <Navigation/>
                 <div className="mainer mt-5">
@@ -24,6 +25,5 @@ export default class Dashboard extends Component {
         )
     }
    
-}
-
+export default Dashboard
 
