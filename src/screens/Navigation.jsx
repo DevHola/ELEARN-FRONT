@@ -1,8 +1,25 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import '../screens/Navigation.css'
 import logo from '../assets/logo.PNG'
-function Navigation() {
+import { useSelector,useDispatch } from 'react-redux'
+import { loadUser} from '../redux/actions/authActions'
+import Slb from './Slb';
+import Csl from './Csl';
+function Navigation({prop}) {
+	const Auth = useSelector((state) => state.Authentication.isAuthenticated)
+    const user = useSelector((state)=>  state.Authentication.user)
+	//console.log(user)
+	const dispatch = useDispatch()
+	const token = Cookies.get('token');
+	
+	useEffect(()=>{
+	  if(token){
+		dispatch(loadUser())
+	  }
+	},[dispatch])
+	
     return (
         <div className="navbar w-100 navbar-inverse navbar-fixed-top">
 	<div className="container-fluid Header tile">
@@ -43,16 +60,9 @@ function Navigation() {
 	<div className="col-5"><div className="row mt-2 ml-1">
 		<div className="col nav ml-4"><a href="#">Teach with DigiLearn.</a></div>
 		<div  className="mb-1 liner"></div>
+		
 		<div className="col-6 mr-5">
-			<div className="row">
-				<div className="col" >
-					<a href="" className="btn classics">Log in</a>
-				  </div>
-				<div className="col" >
-					<button className="btn classic">Sign Up</button>
-				</div>
-				
-			  </div>
+		{Auth ? <Csl user={user}></Csl>: <Slb></Slb>}
 			</div>
 	</div></div>
   </div>

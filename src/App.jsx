@@ -13,13 +13,16 @@ import AuthRoute from './screens/AuthRoute';
 import { useSelector,useDispatch } from 'react-redux'
 import { loadUser} from './redux/actions/authActions'
 export default function App({props}) {
-  const counter = useSelector((state) => state)
+  /*const counter = useSelector((state) => state)
   console.log(counter)
   const dispatch = useDispatch()
   const token = Cookies.get('token');
+  
   useEffect(()=>{
-       dispatch(loadUser())
-  },[dispatch])
+    if(token){
+      dispatch(loadUser())
+    }
+  },[dispatch])*/
   
 		return (
            <div className="">
