@@ -5,7 +5,9 @@ import 'react-loading-skeleton/dist/skeleton.css'
 export default function Csl(props) {
     const user = props.user;
     const isLoading = props.isLoading;
-    
+    if(isLoading === "true"){
+        user.user.name = "User"
+    }
     return (
         <div className="d-flex flex-row">
         <div className="col-4">
