@@ -7,7 +7,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import { loadUser} from '../redux/actions/authActions'
 import Slb from './Slb';
 import Csl from './Csl';
-function Navigation({prop}) {
+export default function Navigation({prop}) {
 	const Auth = useSelector((state) => state.Authentication.isAuthenticated)
     const user = useSelector((state)=>  state.Authentication.user)
 	const isLoading = useSelector((state)=> state.Authentication.isLoading)
@@ -69,4 +69,12 @@ function Navigation({prop}) {
   </div>
     )
 }
-export default Navigation
+// setting default value to name prop
+Navigation.defaultProps = {
+    user: {
+		user:{
+			name:"User"
+		}
+	}
+}
+
