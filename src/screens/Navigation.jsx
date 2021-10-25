@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react';
-import axios from 'axios';
 import Cookies from 'js-cookie';
 import '../screens/Navigation.css'
 import logo from '../assets/logo.PNG'
@@ -9,8 +8,6 @@ import Slb from './Slb';
 import Csl from './Csl';
 export default function Navigation({prop}) {
 	const Auth = useSelector((state) => state.Authentication.isAuthenticated)
-    const user = useSelector((state)=>  state.Authentication.user)
-	const isLoading = useSelector((state)=> state.Authentication.isLoading)
 	const dispatch = useDispatch()
 	const token = Cookies.get('token');
 	
@@ -21,8 +18,8 @@ export default function Navigation({prop}) {
 	},[dispatch])
 	
     return (
-        <div className="navbar w-100 navbar-inverse navbar-fixed-top">
-	<div className="container-fluid Header tile">
+        <div className="navbar fixed-top navbar-expand-sm navbar-light bg-white">
+	<div className="container-fluid  Header tile">
 			<div className="col-7 ">
 		<div className="row dope">
 			<div className="col logos">
@@ -62,7 +59,7 @@ export default function Navigation({prop}) {
 		<div  className="mb-1 liner "></div>
 		
 		<div className="col-6 mr-5">
-		{Auth ? <Csl user={user} isLoading={isLoading}></Csl>: <Slb></Slb>}
+		{Auth ? <Csl></Csl>: <Slb></Slb>}
 			</div>
 	</div></div>
   </div>
@@ -70,11 +67,5 @@ export default function Navigation({prop}) {
     )
 }
 // setting default value to name prop
-Navigation.defaultProps = {
-    user: {
-		user:{
-			name:"User"
-		}
-	}
-}
+
 
