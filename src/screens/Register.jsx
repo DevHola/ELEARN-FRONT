@@ -21,7 +21,7 @@ const Register=()=> {
     e.preventDefault()
     if(name && email && password1){
          if(password1 === password2){
-              axios.post('http://localhost:7000/Api/Register',{
+              axios.post('https://elearn-ai.herokuapp.com/Api/Register',{
                 name,email,password:password1
               }).then(res=>{
                 setFormData({...formdata,
