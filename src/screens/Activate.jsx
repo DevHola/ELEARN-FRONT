@@ -23,7 +23,7 @@ const Activate=({match,history})=> {
      const { name, token, show } = formData;
      const handleSubmit = e =>{
          e.preventDefault()
-         axios.post('http://localhost:7000/Api/user/Activation',{
+         axios.post('https://elearn-ai.herokuapp.com/Api/user/Activation',{
              token
          }).then(res=>{
             setFormData({...formData,show:false})
