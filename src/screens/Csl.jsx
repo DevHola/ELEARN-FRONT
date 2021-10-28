@@ -18,7 +18,7 @@ export default function Csl() {
         </div>
         <div className="col-8">
         <li className="nav-item dropdown">
-         <a href="#" className="nav-link dropdown-toggle twi" data-bs-toggle="dropdown">
+         <a href="#" className="nav-link dropdown-toggle twi text-nowrap" data-bs-toggle="dropdown">
             {user.user.name} </a>
             <div className="dropdown-menu bg-white">
                 <a href="#" className="dropdown-item">Inbox</a>
