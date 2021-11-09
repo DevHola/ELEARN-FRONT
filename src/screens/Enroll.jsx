@@ -1,9 +1,19 @@
-import React from 'react';
-import axios  from 'axios';
+import React,{useEffect} from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import '../screens/Enroll.css'
-function Enroll() {
+//pust useSelector below
+import { useDispatch } from 'react-redux'
+import { userloadcourses } from '../redux/actions/courseAction'
+export default function Enroll() {
+	//const Courses = useSelector((state)=>state.course.courses);
+   // console.log(Courses)
+	const dispatch = useDispatch()
+	useEffect(()=>{
+	
+		  dispatch(userloadcourses())
+	  },[dispatch])
+
 	const responsive = {
 		superLargeDesktop: {
 		  // the naming can be any, depends on you.
@@ -23,6 +33,7 @@ function Enroll() {
 		  items: 1
 		}
 	  };
+	
     return (
         <div className="Courses">
 		<header className="course_header">
@@ -37,7 +48,8 @@ function Enroll() {
 		</header>
 		<hr className="horizon"></hr>
 		<div className="Itemholder justify-content-between"><Carousel className="no" responsive={responsive}>
-		<div className="card item tyer">
+	
+		<div className="card tyer">
   <img className="card-img-top" src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Card cap"></img>
   <div className="card-body">
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -85,4 +97,3 @@ function Enroll() {
 }
 
 
-export default Enroll
