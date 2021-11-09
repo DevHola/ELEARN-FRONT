@@ -32,7 +32,7 @@ export default connect(null, { login })(props => {
             if(user){
               console.log(user.name)
               setTimeout(() => {
-              history.push(`/${user.name}`)
+              history.push('/dashboard')
               }, 5000)
 
             }else{

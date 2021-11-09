@@ -36,7 +36,7 @@ export default function App({props}) {
      <AuthRoute path="/user/activate/:token" type="guest" exact render={props=><Activate {...props}/>}/>
      <AuthRoute path="/user/forgetPassword" exact type="guest" render={props=><ForgetPassword {...props}/>}/>
      <AuthRoute path="/user/ResetPassword/:token" type="guest" exact render={props=><ResetPassword {...props}/>}/>
-     <Route path="/user/:id" exact  render={props=><Dashboard {...props}/>}/>
+     <Route path="/dashboard" exact  render={props=><Dashboard {...props}/>}/>
    </Switch>
 			   </main>
 			   </Router>
