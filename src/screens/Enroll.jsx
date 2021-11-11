@@ -33,6 +33,7 @@ export default function Enroll() {
 		  items: 1
 		}
 	  };
+	if (Courses == null) return <div>Loading...</div>;
 	
     return (
         <div className="Courses">
