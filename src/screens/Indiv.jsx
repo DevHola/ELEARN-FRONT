@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../screens/Enroll.css'
 export default function Indiv({Courses}) {
     return (
         <div>
