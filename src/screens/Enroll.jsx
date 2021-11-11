@@ -6,12 +6,13 @@ import '../screens/Enroll.css'
 import { useDispatch,useSelector } from 'react-redux'
 import { userloadcourses } from '../redux/actions/courseAction'
 export default function Enroll() {
-	const Courses = useSelector((state)=>state.course.user_enrolled_courses);
+	const  Courses   = useSelector((state)=>state.course.user_enrolled_courses);
     console.log(Courses)
 	const dispatch = useDispatch()
 	useEffect(()=>{
-	
-		  dispatch(userloadcourses())
+		setTimeout(() => {
+			dispatch(userloadcourses())
+			}, 5000)
 	  },[dispatch])
 
 	const responsive = {
@@ -33,7 +34,7 @@ export default function Enroll() {
 		  items: 1
 		}
 	  };
-	
+	  if (Courses === null) return <div className="horizon">Loading...</div>;
     return (
         <div className="Courses">
 		<header className="course_header">
