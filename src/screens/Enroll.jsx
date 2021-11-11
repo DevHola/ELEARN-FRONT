@@ -49,8 +49,9 @@ export default function Enroll() {
 			</div>
 		
 		</header>
-		<hr className="horizon"></hr>
-		<div className="Itemholder justify-content-between"><Carousel className="no ml-1" responsive={responsive}>
+		<hr className="horizon later when you come back create a componet fro the skeleton then use a tenary operator to check if courses its null or not "></hr>
+
+		<div className="Itemholder justify-content-between"><Carousel className="no ml-1" responsive={responsive} >
 		{Courses.map((c) => (
 			<div className="lex" >
        	<div className="card tyer">
