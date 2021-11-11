@@ -15,6 +15,16 @@
 .tyer{
     width: fit-content;
 }
+.pro{
+    height:85px;
+}
+.lex{
+    display: flex;
+    flex:1;
+}
+.separate{
+    width:10px;
+}
 .no{
     margin:0;
     padding: 0;
