@@ -7,7 +7,6 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useDispatch,useSelector } from 'react-redux'
 import { userloadcourses } from '../redux/actions/courseAction'
-import Indiv from './Indiv';
 export default function Enroll() {
 	const  Courses   = useSelector((state)=>state.course.user_enrolled_courses);
     console.log(Courses)
@@ -37,7 +36,7 @@ export default function Enroll() {
 		  items: 1
 		}
 	  };
-	  if (Courses === null) return <div className="horizon"><Skeleton /></div>;
+	  if (Courses === null) return <div className="horizon"><Skeleton/></div>;
     return (
         <div className="Courses">
 		<header className="course_header">
@@ -52,8 +51,20 @@ export default function Enroll() {
 		</header>
 		<hr className="horizon"></hr>
 		<div className="Itemholder justify-content-between"><Carousel className="no ml-1" responsive={responsive}>
-		{Courses === null ? <Indiv Courses={Courses}/>  :<Skeleton/>}     
-	</Carousel></div>
+		{Courses.map((c) => (
+			<div className="lex" >
+       	<div className="card tyer">
+		   <img className="card-img-top" src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b25saW5lfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Card cap"></img>
+		   <div className="card-body pro">
+			 <p className="card-text"> {c.Title || <Skeleton/>}.</p>
+		   </div>
+		 </div>
+		 <div className="separate"></div>
+		 </div>
+      ))}          
+	
+
+		</Carousel></div>
 	 </div>
     )
 }
