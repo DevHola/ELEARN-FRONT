@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import '../screens/Enroll.css'
 //pust useSelector below
+import Skeleton from 'react-skeleton-loader';
 import { useDispatch,useSelector } from 'react-redux'
 import { userloadcourses } from '../redux/actions/courseAction'
 export default function Enroll() {
@@ -10,8 +11,9 @@ export default function Enroll() {
     console.log(Courses)
 	const dispatch = useDispatch()
 	useEffect(()=>{
-	
-		  dispatch(userloadcourses())
+		setTimeout(() => {
+			dispatch(userloadcourses())
+			}, 5000)
 	  },[dispatch])
 
 	const responsive = {
