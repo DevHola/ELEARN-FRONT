@@ -52,7 +52,7 @@ export default function Enroll() {
 		</header>
 		<hr className="horizon"></hr>
 		<div className="Itemholder justify-content-between"><Carousel className="no ml-1" responsive={responsive}>
-		{Courses === null ? <Indiv Courses={Courses}/>  :<Skeleton/>}     
+		{Courses === "" ? <Indiv Courses={Courses}/>  :<Skeleton/>}     
 	</Carousel></div>
 	 </div>
     )
