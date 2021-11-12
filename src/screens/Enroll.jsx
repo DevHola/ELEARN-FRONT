@@ -10,13 +10,13 @@ import { userloadcourses } from '../redux/actions/courseAction'
 import Indiv from './Indiv';
 import EnrollLoader from './EnrollLoader';
 export default function Enroll() {
-	const  Courses   = useSelector((state)=>state.course.user_enrolled_courses)  || null;
+	const  Courses   = useSelector((state)=>state.course.user_enrolled_courses) ;
     console.log(Courses)
 	const dispatch = useDispatch()
 	useEffect(()=>{
 		setTimeout(() => {
 			dispatch(userloadcourses())
-			}, 7000)
+			}, 500)
 	  },[dispatch])
 
 	
@@ -35,7 +35,7 @@ export default function Enroll() {
 		</header>
 		<hr className="horizon"></hr>
 
-	{Courses === null ? <EnrollLoader/>: <Indiv Courses={Courses} />}
+	{Courses != null  ?  <Indiv Courses={Courses}  /> : <EnrollLoader/>}
 	 </div>
     )
 }
